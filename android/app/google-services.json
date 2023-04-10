@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964775051166",
+    "project_id": "bootcamplms",
+    "storage_bucket": "bootcamplms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964775051166:android:41539df5023af2e92c608f",
+        "android_client_info": {
+          "package_name": "com.gratias.lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964775051166-tt2jng7cluodvhajst10us4pnkdmf466.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0o2Q8aBb4ReU50GgFaENtlts_NrTcWfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964775051166-tt2jng7cluodvhajst10us4pnkdmf466.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
