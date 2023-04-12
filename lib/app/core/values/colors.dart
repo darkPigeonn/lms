@@ -9,4 +9,7 @@ class AppColors {
 
   //text
   static const Color grey = Color(0xFF6A7483);
+
+  //background
+  static const Color blueBackground = Color(0XFF3A7FD5);
 }

@@ -23,4 +23,35 @@ class FirebaseServices {
       return null;
     }
   }
+
+  Future<User?> signInWithApple() {
+    // TODO: implement signInWithApple
+    throw UnimplementedError();
+  }
+
+  Future<User?> signInWithFacebook() {
+    // TODO: implement signInWithFacebook
+    throw UnimplementedError();
+  }
+
+  Future<bool> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      await GoogleSignIn().signOut();
+      return true;
+    } catch (e, stackTrace) {
+      if (kDebugMode) {
+        print('Error signInWithGoogle: $e, $stackTrace');
+      }
+      return false;
+    }
+  }
+
+  String? getCurrentSignedInUserEmail() {
+    return FirebaseAuth.instance.currentUser?.email;
+  }
+
+  bool isUserSignedIn() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
 }

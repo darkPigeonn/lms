@@ -9,8 +9,9 @@ class LoginController extends GetxController {
   //TODO: Implement LoginController
 
   Future<void> onGoogleSignIn() async {
-    print('disini');
     User? user = await firebaseServices.signInWithGoogle();
-    print(user);
+    String? email = user?.email;
+
+    if (email != null) {}
   }
 }

@@ -14,6 +14,11 @@ dependencies:
   firebase_core: ^2.9.0
   firebase_auth: ^4.4.0
   google_sign_in: ^6.1.0
+  dio: ^5.1.1
+  form_builder_validators: ^8.5.0
+  carousel_slider: ^4.2.1
+  url_launcher: ^6.1.10
+  flutter_widget_from_html: ^0.10.0
 
 dev_dependencies:
   flutter_lints: 2.0.1
