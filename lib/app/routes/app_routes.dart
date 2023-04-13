@@ -15,6 +15,7 @@ abstract class Routes {
   static const EXERCISE_QUESTIONS_FORM = _Paths.EXERCISE_QUESTIONS_FORM;
   static const EXERCISERESULT = _Paths.EXERCISERESULT;
   static const EDITPROFILE = _Paths.EDITPROFILE;
+  static const COURSES_LIST = _Paths.COURSES_LIST;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const EXERCISE_QUESTIONS_FORM = '/exercise-questions-form';
   static const EXERCISERESULT = '/exerciseresult';
   static const EDITPROFILE = '/editprofile';
+  static const COURSES_LIST = '/courses-list';
 }

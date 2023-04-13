@@ -92,7 +92,7 @@ class HomeView extends GetView<HomeController> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'Pilih Pelajaran',
                     style: TextStyle(
@@ -100,11 +100,11 @@ class HomeView extends GetView<HomeController> {
                       fontSize: 18,
                     ),
                   ),
-                  Text(
-                    'Lihat Semua',
-                    style: TextStyle(
-                      color: AppColors.blueBackground,
-                    ),
+                  TextButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.COURSES_LIST);
+                    },
+                    child: Text('Lihat Semua'),
                   )
                 ],
               ),

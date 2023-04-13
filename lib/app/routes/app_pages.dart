@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/coursesList/bindings/courses_list_binding.dart';
+import '../modules/coursesList/views/courses_list_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/discusions/bindings/discusions_binding.dart';
@@ -88,6 +90,11 @@ class AppPages {
       name: _Paths.EDITPROFILE,
       page: () => const EditprofileView(),
       binding: EditprofileBinding(),
+    ),
+    GetPage(
+      name: _Paths.COURSES_LIST,
+      page: () => const CoursesListView(),
+      binding: CoursesListBinding(),
     ),
   ];
 }
