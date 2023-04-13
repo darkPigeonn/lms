@@ -35,7 +35,6 @@ class ExerciseQuestionsFormController extends GetxController {
       List<QuestionListData> result = await coursesRepository.getQuestions(
           exerciseId: exerciseId, email: email);
       questionList.value = result;
-      print(questionList);
       if (questionList.isNotEmpty) {
         // Init jawaban yang sudah diisi
         _initStudentAnsweredQuestions();
@@ -66,7 +65,8 @@ class ExerciseQuestionsFormController extends GetxController {
   }
 
   /// Answers
-  List<QuestionAnswer> questionAnswers = List.empty(growable: true);
+  // List<QuestionAnswer> questionAnswers = List.empty(growable: true)[].obs;
+  List<QuestionAnswer> questionAnswers = <QuestionAnswer>[].obs;
   var activeQuestionIndex = 0.obs;
   String activeQuestionId = '';
   bool submitAnswerLoading = false;
@@ -90,7 +90,6 @@ class ExerciseQuestionsFormController extends GetxController {
       questionAnswers[indexToUpdate] =
           QuestionAnswer(questionId: questionId, answer: answer);
     } else {
-      print('question: $questionId');
       questionAnswers
           .add(QuestionAnswer(questionId: questionId, answer: answer));
     }

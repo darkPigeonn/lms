@@ -21,8 +21,6 @@ class CoursesRepository {
           "user_email": email,
         },
       );
-      print(Urls.courseList);
-      print(result);
       print('service courses...');
 
       /// Dummies

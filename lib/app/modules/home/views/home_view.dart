@@ -28,9 +28,9 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        'Hai, Noel',
+                        'Hai, ' + controller.user!.userName.toString(),
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -40,8 +40,16 @@ class HomeView extends GetView<HomeController> {
                       ),
                     ],
                   ),
-                  const CircleAvatar(
-                    backgroundImage: AssetImage(ImagesAssets.defaultAvatar),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(36),
+                    child: Image.network(
+                      controller.user!.userFoto.toString() != ''
+                          ? controller.user!.userFoto.toString()
+                          : 'https://cdn1-production-images-kly.akamaized.net/H6frj65JGbLKYO7MVWUlp3tD8tc=/1200x1200/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2117358/original/087611600_1524566686-2._Steve_Jobs_-_JUSTIN_SULLIVAN__GETTY_IMAGES_NORTH_AMERICA__AFP.jpg',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ],
               ),

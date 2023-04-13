@@ -13,7 +13,6 @@ class AuthRepository {
     try {
       final result =
           await dioClient.get(Urls.users, queryParameters: {'email': email});
-      print(result);
       UserResponse res = UserResponse.fromJson(result);
 
       if ((res.message ?? '').contains('user tidak ditemukan')) {
@@ -30,10 +29,23 @@ class AuthRepository {
   }
 
   Future<bool> registerUser({required UserBody userBody}) async {
-    print(userBody.toMap());
     try {
       final result =
           await dioClient.post(Urls.userRegister, body: userBody.toMap());
+
+      return true;
+    } catch (e, stackTrace) {
+      if (kDebugMode) {
+        print('Err registerUser: $e, $stackTrace');
+      }
+      return false;
+    }
+  }
+
+  Future<bool> updateUser({required UserBody userBody}) async {
+    try {
+      final result =
+          await dioClient.post(Urls.userUpdate, body: userBody.toMap());
 
       return true;
     } catch (e, stackTrace) {

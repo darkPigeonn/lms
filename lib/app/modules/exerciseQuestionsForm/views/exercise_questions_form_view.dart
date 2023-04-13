@@ -3,6 +3,7 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 import 'package:get/get.dart';
 import 'package:lms/app/core/values/colors.dart';
+import 'package:lms/app/core/values/images.dart';
 import 'package:lms/app/data/models/questions.dart';
 
 import '../controllers/exercise_questions_form_controller.dart';
@@ -155,6 +156,10 @@ class ExerciseQuestionsFormView
                               children: [
                                 Column(
                                   children: [
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Image.asset(ImagesAssets.endQuestions),
                                     const SizedBox(height: 16),
                                     const Text(
                                         'Kumpulkan latihan soal sekarang?'),

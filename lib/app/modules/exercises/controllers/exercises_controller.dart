@@ -18,7 +18,6 @@ class ExercisesController extends GetxController {
     var args = Get.arguments;
     courseName.value = args['courseName'];
     courseId = args['courseId'];
-    print('da');
 
     Future.delayed(const Duration(milliseconds: 100)).then((value) async {
       await getExercises();
@@ -38,7 +37,6 @@ class ExercisesController extends GetxController {
           .getExercisesByCourse(courseId: courseId, email: email);
 
       exerciseList = result;
-      print(exerciseList);
       isExercicesLoading.value = false;
       update();
     } else {

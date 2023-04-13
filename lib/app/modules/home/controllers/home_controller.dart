@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:lms/app/data/models/banner.dart';
 import 'package:lms/app/data/models/courses.dart';
+import 'package:lms/app/data/models/user.dart';
 import 'package:lms/app/data/repository/banner_repository.dart';
 import 'package:lms/app/data/repository/courses_repository.dart';
 import 'package:lms/app/data/services/firebaseServices.dart';
@@ -21,6 +22,8 @@ class HomeController extends GetxController {
 
   String majorName = 'IPA';
   int maxHomeCourseCount = 3;
+
+  UserData? user = Get.arguments;
   @override
   void onInit() {
     getCourse();
@@ -51,7 +54,6 @@ class HomeController extends GetxController {
       limit: 5,
     );
     isGetBannerLoading.value = false;
-    print(isGetBannerLoading);
     bannerList = result;
     update();
   }

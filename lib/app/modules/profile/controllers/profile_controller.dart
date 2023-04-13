@@ -1,23 +1,18 @@
 import 'package:get/get.dart';
+import 'package:lms/app/data/models/user.dart';
+import 'package:lms/app/data/services/firebaseServices.dart';
+import 'package:lms/app/routes/app_pages.dart';
 
 class ProfileController extends GetxController {
+  FirebaseServices firebaseServices;
+
+  ProfileController(this.firebaseServices);
   //TODO: Implement ProfileController
 
-  final count = 0.obs;
+  UserData? user = Get.arguments;
   @override
-  void onInit() {
-    super.onInit();
+  logout() async {
+    await firebaseServices.signOut();
+    Get.offAllNamed(Routes.LOGIN);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

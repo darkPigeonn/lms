@@ -4,9 +4,13 @@ class ExerciseresultController extends GetxController {
   //TODO: Implement ExerciseresultController
 
   final count = 0.obs;
+  String score = "0";
   @override
   void onInit() {
     super.onInit();
+
+    var args = Get.arguments;
+    score = args;
   }
 
   @override

@@ -4,6 +4,8 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/discusions/bindings/discusions_binding.dart';
 import '../modules/discusions/views/discusions_view.dart';
+import '../modules/editprofile/bindings/editprofile_binding.dart';
+import '../modules/editprofile/views/editprofile_view.dart';
 import '../modules/exerciseQuestionsForm/bindings/exercise_questions_form_binding.dart';
 import '../modules/exerciseQuestionsForm/views/exercise_questions_form_view.dart';
 import '../modules/exerciseresult/bindings/exerciseresult_binding.dart';
@@ -13,7 +15,6 @@ import '../modules/exercises/views/exercises_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
-import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/registerForm/bindings/register_form_binding.dart';
 import '../modules/registerForm/views/register_form_view.dart';
@@ -62,7 +63,6 @@ class AppPages {
     GetPage(
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
-      binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.DISCUSIONS,
@@ -83,6 +83,11 @@ class AppPages {
       name: _Paths.EXERCISERESULT,
       page: () => const ExerciseresultView(),
       binding: ExerciseresultBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDITPROFILE,
+      page: () => const EditprofileView(),
+      binding: EditprofileBinding(),
     ),
   ];
 }
