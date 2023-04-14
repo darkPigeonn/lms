@@ -22,6 +22,7 @@ class CoursesRepository {
         },
       );
       print('service courses...');
+      print(result);
 
       /// Dummies
       // String dummiesRes = await rootBundle.loadString('assets/dummies/courses.json');

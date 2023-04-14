@@ -44,9 +44,17 @@ class DiscusionsView extends GetView<DiscusionsController> {
                 // );
 
                 return StreamBuilder(
-                  stream: controller.getCollection().snapshots(),
+                  stream: controller
+                      .getCollection()
+                      .orderBy('timestamp', descending: false)
+                      .snapshots(),
                   builder: (context, snapshot) {
+                    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                      controller.scrollAutomatic();
+                    });
                     return ListView.builder(
+                        shrinkWrap: true,
+                        controller: controller.scrollController,
                         itemCount: snapshot.data!.docs.length,
                         itemBuilder: (context, index) {
                           DocumentSnapshot chat = snapshot.data!.docs[index];
@@ -107,7 +115,10 @@ class DiscusionsView extends GetView<DiscusionsController> {
 
   void onSend(BuildContext context) {
     var message = controller.messageController.text;
-    controller.sendMessage(message, 'text');
+    if (message.isNotEmpty) {
+      controller.sendMessage(message, 'text');
+    }
+
     controller.messageController.clear();
   }
 

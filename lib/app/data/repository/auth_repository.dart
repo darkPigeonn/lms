@@ -13,9 +13,10 @@ class AuthRepository {
     try {
       final result =
           await dioClient.get(Urls.users, queryParameters: {'email': email});
+      print(result);
       UserResponse res = UserResponse.fromJson(result);
 
-      if ((res.message ?? '').contains('user tidak ditemukan')) {
+      if (result['status'] != 1) {
         return null;
       }
       return res.data;
@@ -28,17 +29,17 @@ class AuthRepository {
     }
   }
 
-  Future<bool> registerUser({required UserBody userBody}) async {
+  Future<UserData?> registerUser({required UserBody userBody}) async {
     try {
       final result =
           await dioClient.post(Urls.userRegister, body: userBody.toMap());
-
-      return true;
+      UserResponse res = UserResponse.fromJson(result);
+      return res.data;
     } catch (e, stackTrace) {
       if (kDebugMode) {
         print('Err registerUser: $e, $stackTrace');
       }
-      return false;
+      return null;
     }
   }
 

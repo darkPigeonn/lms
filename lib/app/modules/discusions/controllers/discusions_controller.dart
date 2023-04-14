@@ -18,6 +18,8 @@ class DiscusionsController extends GetxController {
   final _isLoadingMessages = false.obs;
   final _selectedFile = Rx<XFile?>(null);
 
+  ScrollController scrollController = ScrollController();
+
   List<ChatItem> get messages => _messages.value;
   bool get isLoadingMessages => _isLoadingMessages.value;
   XFile? get selectedFile => _selectedFile.value;
@@ -32,6 +34,10 @@ class DiscusionsController extends GetxController {
     return firebaseFirestore.collection("discusions");
   }
 
+  scrollAutomatic() {
+    scrollController.animateTo(scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
+  }
   // Future<Stream<QuerySnapshot<Map<String, dynamic>>>> streamChats2(
   //     String chat_id) async {
   //   CollectionReference chats = firebaseFirestore.collection("discusions");
@@ -73,6 +79,8 @@ class DiscusionsController extends GetxController {
         'timestamp': DateTime.now().millisecondsSinceEpoch.toString(),
       });
     }
+    scrollController.animateTo(scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
   }
 
   int get messageLength => _messages.value.length;

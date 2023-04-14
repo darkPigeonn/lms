@@ -34,9 +34,10 @@ class RegisterFormController extends GetxController {
     user.photoUrl = user2!.photoURL;
 
     try {
-      final result = await authRepository.registerUser(userBody: user);
+      final UserData? result =
+          await authRepository.registerUser(userBody: user);
       Get.snackbar('Valid!!!', '.......', snackPosition: SnackPosition.BOTTOM);
-      Get.offAllNamed(Routes.DASHBOARD);
+      Get.offAllNamed(Routes.DASHBOARD, arguments: result);
     } catch (e) {}
   }
 }

@@ -37,6 +37,8 @@ class SplashController extends GetxController {
     // email != null artinya user sudah sign-in
     if (email != null) {
       UserData? userData = await authRepository.getUserByEmail(email: email);
+      print("userData");
+      print(userData);
 
       if (userData != null) {
         // User is Registered
